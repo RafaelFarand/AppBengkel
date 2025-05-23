@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="sparepart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Manage Spareparts</h2>
+        <button onclick="showAddForm()">Tambah Sparepart</button>
+
+        <!-- Add/Edit Form -->
+        <div id="sparepartForm" class="hidden">
+            <input type="text" id="sparepartName" placeholder="Nama">
+            <input type="number" id="sparepartStock" placeholder="Stok">
+            <input type="number" id="sparepartPrice" placeholder="Harga">
+            <input type="file" id="sparepartImage">
+            <button onclick="saveSparepart()">Simpan</button>
+        </div>
+
+        <!-- Spareparts List -->
+        <div id="sparepartsList" class="grid"></div>
+    </div>
+</body>
+</html>
