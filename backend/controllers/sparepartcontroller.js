@@ -15,19 +15,15 @@ export async function getSpareparts(req, res) {
 // POST with image
 export async function createSparepart(req, res) {
     try {
-      const { name, stock, price, supplierId } = req.body;
-  
-      console.log("Uploaded file:", req.file); // Debug
-      const image = req.file ? req.file.filename : null;
-  
-      const newData = await Sparepart.create({ name, stock, price, supplierId, image });
-      res.status(201).json(newData);
+        const { name, stock, price, supplierId } = req.body;
+        const image = req.file ? req.file.filename : null;
+
+        const newData = await Sparepart.create({ name, stock, price, supplierId, image });
+        res.status(201).json(newData);
     } catch (err) {
-      console.error("Error creating sparepart:", err); // Tambah log
-      res.status(500).json({ message: err.message });
+        res.status(500).json({ message: err.message });
     }
-  }
-  
+}
 
 // PUT
 export async function updateSparepart(req, res) {
